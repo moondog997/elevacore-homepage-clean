@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,42 +21,58 @@
       filter: drop-shadow(0 0 10px #00ffff);
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin-top: 20px;
+    .intro {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
     }
 
-    li {
-      margin: 6px 0;
-      font-size: 16px;
+    .app-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .app-tab {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: bold;
+      box-shadow: 0 0 6px #00ffff;
     }
   </style>
 </head>
 <body>
   <img src="elevacore-logo-final.jpeg" alt="Elevacore Logo" />
   <h1>Elevacore Technologies</h1>
-  <p>Welcome to the official homepage.</p>
+
+  <div class="intro">
+    Elevacore Technologies builds and deploys a dynamic ecosystem of autonomous, AI-powered applications designed to eliminate technical friction for users. Our platforms span commerce, automation, influence, and intelligence — each engineered for precision, scalability, and control.
+  </div>
 
   <h2>Our App Ecosystem</h2>
-  <ul>
-    <li>• Polaraforce</li>
-    <li>• Synthora</li>
-    <li>• Foundation Formula</li>
-    <li>• Crossrealm</li>
-    <li>• Foracle</li>
-    <li>• Trendrop</li>
-    <li>• Danamm</li>
-    <li>• Promptpitch</li>
-    <li>• Pulse</li>
-    <li>• Bizorch</li>
-    <li>• Moneymax</li>
-    <li>• Moneygod</li>
-    <li>• Autoprofit AI</li>
-    <li>• Infanantcommerse</li>
-    <li>• Autoinfluince</li>
-    <li>• Eventplan</li>
-    <li>• Dealmkr</li>
-  </ul>
+  <div class="app-grid">
+    <div class="app-tab">Polaraforce</div>
+    <div class="app-tab">Synthora</div>
+    <div class="app-tab">Foundation Formula</div>
+    <div class="app-tab">Crossrealm</div>
+    <div class="app-tab">Foracle</div>
+    <div class="app-tab">Trendrop</div>
+    <div class="app-tab">Danamm</div>
+    <div class="app-tab">Promptpitch</div>
+    <div class="app-tab">Pulse</div>
+    <div class="app-tab">Bizorch</div>
+    <div class="app-tab">Moneymax</div>
+    <div class="app-tab">Moneygod</div>
+    <div class="app-tab">Autoprofit AI</div>
+    <div class="app-tab">Infanantcommerse</div>
+    <div class="app-tab">Autoinfluince</div>
+    <div class="app-tab">Eventplan</div>
+    <div class="app-tab">Dealmkr</div>
+  </div>
 </body>
 </html>
