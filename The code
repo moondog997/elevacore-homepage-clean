@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elevacore Technologies</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #0f0f1f, #1a1a2e);
+      color: #e0e0e0;
+      text-align: center;
+    }
+
+    img {
+      max-width: 180px;
+      margin-bottom: 30px;
+      filter: drop-shadow(0 0 10px #00ffff);
+    }
+
+    h1 {
+      font-size: 48px;
+      color: #00ffff;
+      margin-bottom: 20px;
+      text-shadow: 0 0 8px #00ffff;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #cccccc;
+    }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 40px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .app-grid div {
+      background-color: #2a2a3f;
+      padding: 12px;
+      border-radius: 8px;
+      box-shadow: 0 0 6px #00ffff;
+    }
+  </style>
+</head>
+<body>
+  <img src="elevacore-logo-final.png" alt="Elevacore Logo" />
+  <h1>Elevacore Technologies</h1>
+
+  <p>Elevacore Technologies is a next-generation innovation company building autonomous, AI-powered systems that create, market, and scale digital businesses automatically.</p>
+  <p>We develop intelligent platforms that replace complexity with clarity — empowering creators, entrepreneurs, and brands to grow faster, smarter, and more freely than ever before.</p>
+  <p>More than a tech company, Elevacore is a movement — redefining success through automation, creativity, and purpose.</p>
+
+  <div class="app-grid">
+    <div>Polaraforce</div>
+    <div>Synthora</div>
+    <div>Foundation Formula</div>
+    <div>Crossrealm</div>
+    <div>Foracle</div>
+    <div>Trendrop</div>
+    <div>Danamm</div>
+    <div>Promptpitch</div>
+    <div>Pulse</div>
+    <div>Bizorch</div>
+    <div>Moneymax</div>
+    <div>Moneygod</div>
+    <div>Autoprofit AI</div>
+    <div>Infanantcommerse</div>
+    <div>Autoinfluince</div>
+    <div>Eventplan</div>
+    <div>Dealmkr</div>
+  </div>
+</body>
+</html>
