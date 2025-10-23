@@ -1,89 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Elevacore Technologies</title>
+  <meta name="description" content="Elevacore Technologies builds autonomous, AI-powered systems that create, market, and scale digital businesses automatically." />
+  <link rel="icon" href="favicon.svg">
   <style>
-    body {
-      margin: 0;
-      padding: 40px 20px;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #0e0f1f, #1a1a2e);
-      color: #e0e0e0;
-      text-align: center;
-    }
-.tab {
-    display: inline-flex;
-    padding: 12px 16px;
-    border-radius: 12px;
-    backgrounnd: rgba(255,255,255,.06);
-    border: 1px solid rgba(255,255,255
-    color: #eaeaf0;
-    text-deciratuib: none;
-    font-weight: 600;
-  }
-  </style>
-    img {
-      max-width: 180px;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 0 10px #00ffff);
-    }
-
-    .intro {
-      font-size: 18px;
-      max-width: 700px;
-      margin: 0 auto 40px;
-      line-height: 1.6;
-    }
-
-    .app-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-    }
-
-    .app-tab {
-      background-color: #007bff;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 6px;
-      font-size: 14px;
-      font-weight: bold;
-      box-shadow: 0 0 6px #00ffff;
-    }
+    :root{--bg:#0b0b10;--text:#eaeaf0;--muted:#cfd2da;--line:rgba(255,255,255,.12);--card:rgba(255,255,255,.06);--brand:#3b82f6;--brand-2:#60a5fa}
+    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
+    header{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line)}
+    .brand{font-weight:700;letter-spacing:.2px}
+    nav{margin-left:auto;display:flex;gap:16px} nav a{color:var(--text);text-decoration:none;opacity:.85} nav a:hover{opacity:1}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+    .hero{padding:48px 0;text-align:center}
+    h1{font-size:40px;line-height:1.1;margin:6px 0}
+    .lead{color:var(--muted);max-width:880px;margin:10px auto 0}
+    .tabs{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0;justify-content:center}
+    .tab{display:inline-flex;align-items:center;padding:12px 16px;border-radius:12px;background:var(--card);border:1px solid var(--line);color:var(--text);text-decoration:none;font-weight:600;transition:.2s}
+    .tab:hover{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.22);transform:translateY(-1px)}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+    footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;color:#b7bcc8;margin-top:28px}
   </style>
 </head>
 <body>
-  <img src="elevacore-logo-final.jpeg" alt="Elevacore Logo" />
-  <h1>Elevacore Technologies</h1>
+  <header class="wrap">
+    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit">
+      <img src="elevacore-logo-final.jpeg" alt="Elevacore Logo" width="40" height="40" style="border-radius:8px;object-fit:cover">
+      <span class="brand">Elevacore Technologies</span>
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="polaraforce.html">Polaraforce</a>
+      <a href="signup.html">Join</a>
+    </nav>
+  </header>
 
-  <div class="intro">
-    Elevacore Technologies is a next-generation innovation company building autonomous, AI-powered systems that create, market, and scale digital businesses automatically.<br><br>
-    We develop intelligent platforms that replace complexity with clarity — empowering creators, entrepreneurs, and brands to grow faster, smarter, and more freely than ever before.<br><br>
-    More than a tech company, Elevacore is a movement — redefining success through automation, creativity, and purpose. Our mission is simple: to give people the tools, freedom, and confidence to create prosperity through intelligent technology.
-  </div>
+  <main class="wrap">
+    <section class="hero">
+      <h1>Elevacore Technologies</h1>
+      <p class="lead">
+        Elevacore Technologies is a next-generation innovation company building autonomous, AI-powered systems that create, market, and scale digital businesses automatically.
+        We replace complexity with clarity — empowering creators, entrepreneurs, and brands to grow faster, smarter, and more freely than ever before.
+        Our mission is simple: to give people the tools, freedom, and confidence to <strong>create prosperity through intelligent technology.</strong>
+      </p>
+    </section>
 
-  <h2>Our App Ecosystem</h2>
-  <div class="app-grid">
-    <a href="polaraforce.html" class="tab">polaraforce</a>
-    <div class="app-tab">Synthora</div>
-    <div class="app-tab">Foundation Formula</div>
-    <div class="app-tab">Crossrealm</div>
-    <div class="app-tab">Foracle</div>
-    <div class="app-tab">Trendrop</div>
-    <div class="app-tab">Danamm</div>
-    <div class="app-tab">Promptpitch</div>
-    <div class="app-tab">Pulse</div>
-    <div class="app-tab">Bizorch</div>
-    <div class="app-tab">Moneymax</div>
-    <div class="app-tab">Moneygod</div>
-    <div class="app-tab">Autoprofit AI</div>
-    <div class="app-tab">Infanantcommerse</div>
-    <div class="app-tab">Autoinfluince</div>
-    <div class="app-tab">Eventplan</div>
-    <div class="app-tab">Dealmkr</div>
-  </div>
+    <section class="card">
+      <h2 style="margin:0 0 8px">Our App Ecosystem</h2>
+      <div class="tabs">
+        <a class="tab" href="polaraforce.html">Polaraforce</a>
+        <a class="tab" href="signup.html">Join the Launch List</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="y"></span> Elevacore Technologies — Engineering the Future of Automation</footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
