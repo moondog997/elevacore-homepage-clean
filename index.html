@@ -1,92 +1,279 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Elevacore Technologies</title>
-  <meta name="description" content="Elevacore Technologies builds autonomous, AI-powered systems that create, market, and scale digital businesses automatically." />
-  <link rel="icon" href="favicon.svg">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Elevacore — App Suite</title>
   <style>
-    :root{
-      --bg:#0b0b10; --panel:#0f1117; --text:#eaeaf0; --muted:#cfd2da;
-      --line:rgba(255,255,255,.12); --card:rgba(255,255,255,.06);
-      --brand:#3b82f6; --brand2:#60a5fa;
+    :root {
+      --bg: #0b0b10;
+      --card: #14141c;
+      --muted: #7c7f8a;
+      --text: #e6e8ef;
+      --brand: #8b5cf6; /* violet-500 */
+      --brand-2: #22d3ee; /* cyan-400 */
+      --ring: rgba(139, 92, 246, .35);
     }
-    *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,#0b0b10,#0f1117);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
-    a{color:#c8d7ff}
-    /* Header */
-    header{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line);background:#0b0b10}
-    .brand{font-weight:700;letter-spacing:.2px}
-    nav{margin-left:auto;display:flex;gap:16px}
-    nav a{color:var(--text);text-decoration:none;opacity:.85}
-    nav a:hover{opacity:1}
-    /* Layout */
-    .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-    .hero{padding:36px 0 18px;text-align:center}
-    .logo{max-width:640px;width:100%;border-radius:12px;display:block;margin:0 auto 14px;object-fit:cover;filter:drop-shadow(0 0 18px #00e0ff22)}
-    h1{font-size:40px;line-height:1.1;margin:0}
-    .lead{color:var(--muted);max-width:820px;margin:14px auto 0;font-size:18px;line-height:1.6}
-    /* Card */
-    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
-    /* Tabs */
-    .tabs{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0;justify-content:center}
-    .tab{
-      display:inline-flex;align-items:center;padding:12px 16px;border-radius:12px;
-      background:var(--card);border:1px solid var(--line);color:var(--text);
-      text-decoration:none;font-weight:600;transition:.2s
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+      background: radial-gradient(1200px 800px at 80% -20%, rgba(34,211,238,.07), transparent 60%),
+                  radial-gradient(1000px 600px at -10% 0%, rgba(139,92,246,.09), transparent 60%), var(--bg);
+      color: var(--text);
     }
-    .tab:hover{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.22);transform:translateY(-1px)}
-    footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;color:#b7bcc8;margin-top:28px}
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 24px 16px 80px; }
+    header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .logo {
+      width: 40px; height: 40px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      display: grid; place-items: center; font-weight: 700; color: #0b0b10;
+      box-shadow: 0 6px 18px rgba(139,92,246,.35), inset 0 0 0 1px rgba(255,255,255,.4);
+    }
+    h1 { font-size: 20px; margin: 0; letter-spacing: .2px; }
+    .muted { color: var(--muted); font-size: 13px; }
+
+    /* Tabs bar */
+    .tabs {
+      position: sticky; top: 0; z-index: 5;
+      background: linear-gradient(180deg, rgba(11,11,16,.75), rgba(11,11,16,.45));
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(124,127,138,.18);
+    }
+    .tabs-inner {
+      display: flex; gap: 8px; padding: 10px 16px; overflow-x: auto;
+      scrollbar-width: thin;
+    }
+    .tab {
+      white-space: nowrap; padding: 10px 14px; border-radius: 12px;
+      background: transparent; color: var(--text); border: 1px solid rgba(124,127,138,.25);
+      cursor: pointer; font-size: 14px;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease, box-shadow .12s ease;
+    }
+    .tab:hover { border-color: rgba(139,92,246,.6); box-shadow: 0 0 0 3px var(--ring) inset; }
+    .tab[aria-selected="true"] {
+      background: linear-gradient(180deg, rgba(139,92,246,.22), rgba(139,92,246,.12));
+      border-color: rgba(139,92,246,.85);
+      box-shadow: 0 0 0 3px var(--ring);
+    }
+
+    /* Panels */
+    .panel {
+      display: none; border: 1px solid rgba(124,127,138,.22);
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));
+      border-radius: 16px; margin-top: 16px; padding: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .panel.active { display: block; }
+    .panel h2 { margin: 0 0 6px; font-size: 18px; }
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0 14px; }
+    .chip {
+      font-size: 12px; padding: 6px 10px; border-radius: 999px; color: #cfd3e3;
+      border: 1px dashed rgba(124,127,138,.35);
+      background: rgba(124,127,138,.12);
+    }
+    .cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(139,92,246,.8);
+      background: linear-gradient(180deg, rgba(139,92,246,.2), rgba(139,92,246,.08));
+      color: #fff; text-decoration: none; font-weight: 600;
+      box-shadow: 0 8px 22px rgba(139,92,246,.25);
+    }
+    .cta:hover { box-shadow: 0 10px 28px rgba(139,92,246,.35); transform: translateY(-1px); }
+    .note { font-size: 13px; color: var(--muted); margin-top: 8px; }
+    .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 10px; }
+    .card {
+      border: 1px solid rgba(124,127,138,.22); border-radius: 14px; padding: 14px;
+      background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.00));
+    }
+    .small { font-size: 13px; color: var(--muted); }
+    footer { margin-top: 28px; text-align: center; color: var(--muted); font-size: 12px; }
+    code { background: rgba(124,127,138,.18); padding: 2px 6px; border-radius: 6px; }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="wrap">
-    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit">
-      <!-- Make sure this filename exists at repo root -->
-      <img src="elevacore-logo-final.jpeg" alt="Elevacore Logo" width="44" height="44" style="border-radius:8px;object-fit:cover">
-      <span class="brand">Elevacore Technologies</span>
-    </a>
-    <nav>
-      <a href="index.html" style="opacity:1">Home</a>
-      <a href="polaraforce.html">Polaraforce</a>
-      <a href="signup.html">Join</a>
+  <div class="wrap">
+    <header>
+      <div class="logo">E</div>
+      <div>
+        <h1>Elevacore App Suite</h1>
+        <div class="muted">Unified home for your products, tools, and experiments.</div>
+      </div>
+    </header>
+
+    <!-- Tabs -->
+    <nav class="tabs" role="tablist" aria-label="Apps">
+      <div class="tabs-inner">
+        <!-- Tip: The id/hash for each tab matches its panel id -->
+        <button class="tab" role="tab" data-tab="polaraforce" aria-selected="true">Polaraforce</button>
+        <button class="tab" role="tab" data-tab="autoprofit-ai">AutoProfit AI</button>
+        <button class="tab" role="tab" data-tab="autocontentx">AutoContentX</button>
+        <button class="tab" role="tab" data-tab="autoinfluence">AutoInfluence</button>
+        <button class="tab" role="tab" data-tab="infinitecommerce">InfiniteCommerce</button>
+        <button class="tab" role="tab" data-tab="salustream">Salustream</button>
+        <button class="tab" role="tab" data-tab="crossrealm">CrossRealm</button>
+        <button class="tab" role="tab" data-tab="foracle">Foracle</button>
+        <button class="tab" role="tab" data-tab="trend-predictor">Viral Trend Predictor</button>
+        <button class="tab" role="tab" data-tab="fundflow">FundFlow</button>
+        <button class="tab" role="tab" data-tab="amm">Affiliate Money Maximizer</button>
+        <button class="tab" role="tab" data-tab="securesuccess">SecureSuccess</button>
+        <button class="tab" role="tab" data-tab="aideal">AI DealMaker</button>
+        <button class="tab" role="tab" data-tab="foundation-formula">The Foundation Formula</button>
+      </div>
     </nav>
-  </header>
 
-  <!-- Hero -->
-  <main class="wrap">
-    <!-- Optional big banner image (your logo as hero) -->
-    <img class="logo" src="elevacore-logo-final.jpeg" alt="Elevacore">
+    <!-- Panels -->
+    <section id="polaraforce" class="panel active" role="tabpanel" aria-labelledby="tab-polaraforce">
+      <h2>Polaraforce</h2>
+      <p class="small">AI-powered marketing engine: campaign briefs → viral creative → multi-channel launch → analytics.</p>
+      <div class="chips">
+        <span class="chip">AI Video Ads</span><span class="chip">A/B Creative</span><span class="chip">Auto Targeting</span><span class="chip">CRM Lite</span>
+      </div>
+      <a class="cta" href="./polaraforce/index.html">Open Polaraforce</a>
+      <p class="note">Path not right? Put the correct file at <code>./polaraforce/index.html</code> or edit the link above.</p>
 
-    <section class="hero">
-      <h1>Elevacore Technologies</h1>
-      <p class="lead">
-        Elevacore Technologies is a next-generation innovation company building autonomous, AI-powered systems that
-        create, market, and scale digital businesses automatically. We replace complexity with clarity — empowering
-        creators, entrepreneurs, and brands to grow faster, smarter, and more freely than ever before. Our mission is
-        simple: to give people the tools, freedom, and confidence to <strong>create prosperity through intelligent technology.</strong>
-      </p>
-    </section>
-
-    <!-- Apps -->
-    <section class="card">
-      <h2 style="margin:0 0 8px">Our App Ecosystem</h2>
-      <div class="tabs">
-        <a class="tab" href="polaraforce.html">Polaraforce</a>
-        <a class="tab" href="signup.html">Join the Launch List</a>
-        <!-- Add more as you build them -->
-        <!-- <a class="tab" href="synthora.html">Synthora</a> -->
-        <!-- <a class="tab" href="foundation-formula.html">Foundation Formula</a> -->
+      <div class="grid">
+        <div class="card"><strong>Status</strong><div class="small">Production-ready handoff in progress.</div></div>
+        <div class="card"><strong>Next</strong><div class="small">Finalize Stripe tiers & CRM screens.</div></div>
       </div>
     </section>
-  </main>
 
-  <footer>
-    © <span id="y"></span> Elevacore Technologies — Engineering the Future of Automation
-  </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+    <!-- AutoProfit AI -> redirects to external/landing file -->
+    <section id="autoprofit-ai" class="panel" role="tabpanel" aria-labelledby="tab-autoprofit-ai" data-redirect="true">
+      <h2>AutoProfit AI</h2>
+      <p class="small">Redirecting to the landing page… If nothing happens, use the button below.</p>
+      <a class="cta" id="autoprofitAiLink" href="#">Go to AutoProfit AI</a>
+      <p class="note">If your landing file lives somewhere else, edit <code>AUTO_PROFIT_AI_PATH</code> in the script.</p>
+    </section>
+
+    <section id="autocontentx" class="panel" role="tabpanel">
+      <h2>AutoContentX</h2>
+      <p class="small">AI content + monetization: viral posts, blogs, scripts, and auto-posting with affiliate injection.</p>
+      <a class="cta" href="./autocontentx/index.html">Open AutoContentX</a>
+    </section>
+
+    <section id="autoinfluence" class="panel" role="tabpanel">
+      <h2>AutoInfluence</h2>
+      <p class="small">Automated personal brand growth: content, engagement, sponsorships.</p>
+      <a class="cta" href="./autoinfluence/index.html">Open AutoInfluence</a>
+    </section>
+
+    <section id="infinitecommerce" class="panel" role="tabpanel">
+      <h2>InfiniteCommerce</h2>
+      <p class="small">Fully autonomous e-commerce creation, sync, and marketing.</p>
+      <a class="cta" href="./infinitecommerce/index.html">Open InfiniteCommerce</a>
+    </section>
+
+    <section id="salustream" class="panel" role="tabpanel">
+      <h2>Salustream</h2>
+      <p class="small">TikTok-style social commerce with live events and storefronts.</p>
+      <a class="cta" href="./salustream/index.html">Open Salustream</a>
+    </section>
+
+    <section id="crossrealm" class="panel" role="tabpanel">
+      <h2>CrossRealm</h2>
+      <p class="small">Squad play, stats bridging, Discord bot integration.</p>
+      <a class="cta" href="./crossrealm/index.html">Open CrossRealm</a>
+    </section>
+
+    <section id="foracle" class="panel" role="tabpanel">
+      <h2>Foracle</h2>
+      <p class="small">Prediction studio for sports, races, and lottery (entertainment only).</p>
+      <a class="cta" href="./foracle/index.html">Open Foracle</a>
+    </section>
+
+    <section id="trend-predictor" class="panel" role="tabpanel">
+      <h2>Viral Trend Predictor</h2>
+      <p class="small">Find trends before they break. Early content & product prompts.</p>
+      <a class="cta" href="./trend-predictor/index.html">Open Trend Predictor</a>
+    </section>
+
+    <section id="fundflow" class="panel" role="tabpanel">
+      <h2>FundFlow</h2>
+      <p class="small">Next-gen crowdfunding mechanics.</p>
+      <a class="cta" href="./fundflow/index.html">Open FundFlow</a>
+    </section>
+
+    <section id="amm" class="panel" role="tabpanel">
+      <h2>Affiliate Money Maximizer</h2>
+      <p class="small">Track commissions, connect networks, and optimize earnings.</p>
+      <a class="cta" href="./affiliate-money-maximizer/index.html">Open AMM</a>
+    </section>
+
+    <section id="securesuccess" class="panel" role="tabpanel">
+      <h2>SecureSuccess</h2>
+      <p class="small">Verified money-making opportunities with step-by-step guides.</p>
+      <a class="cta" href="./securesuccess/index.html">Open SecureSuccess</a>
+    </section>
+
+    <section id="aideal" class="panel" role="tabpanel">
+      <h2>AI DealMaker</h2>
+      <p class="small">Automated negotiation, contracts, and deal flow.</p>
+      <a class="cta" href="./ai-dealmaker/index.html">Open AI DealMaker</a>
+    </section>
+
+    <section id="foundation-formula" class="panel" role="tabpanel">
+      <h2>The Foundation Formula</h2>
+      <p class="small">Your transformation course: gratitude, action, accountability.</p>
+      <a class="cta" href="./foundation-formula/index.html">Open Course</a>
+    </section>
+
+    <footer>© <span id="year"></span> Elevacore Technologies</footer>
+  </div>
+
+  <script>
+    // ==== CONFIG: Set your real landing path for AutoProfit AI here ====
+    // Example options you might be using:
+    // "./autoprofit-ai/index.html"
+    // "./apps/autoprofit-ai/landing.html"
+    // "./AutoProfitAI/landing.html"
+    const AUTO_PROFIT_AI_PATH = "./autoprofit-ai/index.html";
+    // ================================================================
+
+    const $ = (sel, ctx=document) => ctx.querySelector(sel);
+    const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
+
+    const tabs = $$('.tab');
+    const panels = $$('.panel');
+    const linkAuto = $('#autoprofitAiLink');
+
+    function showTab(id, fromHash=false) {
+      // Special case: AutoProfit AI redirects to landing page
+      if (id === 'autoprofit-ai') {
+        // Try a quick redirect (also set fallback link)
+        if (linkAuto) { linkAuto.href = AUTO_PROFIT_AI_PATH; }
+        window.location.href = AUTO_PROFIT_AI_PATH;
+        // Keep panel visible as a fallback (e.g., if file missing)
+      }
+
+      panels.forEach(p => p.classList.toggle('active', p.id === id));
+      tabs.forEach(t => {
+        const on = t.dataset.tab === id;
+        t.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+
+      // Update hash for deep links (skip if we already came from hashchange)
+      if (!fromHash) history.replaceState(null, '', `#${id}`);
+    }
+
+    // Click handlers
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => showTab(btn.dataset.tab));
+    });
+
+    // Hash routing
+    function initFromHash() {
+      const target = (location.hash || '').replace('#','').trim();
+      const exists = panels.some(p => p.id === target);
+      showTab(exists ? target : 'polaraforce', true);
+    }
+    window.addEventListener('hashchange', initFromHash);
+
+    // Year
+    $('#year').textContent = new Date().getFullYear();
+
+    // Init
+    initFromHash();
+  </script>
 </body>
 </html>
