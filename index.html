@@ -1,101 +1,242 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Elevacore Technologies</title>
-  <meta name="description" content="Elevacore Technologies builds autonomous, AI-powered systems that create, market, and scale digital businesses automatically." />
-  <link rel="icon" href="favicon.svg">
+  <meta name="description" content="Elevacore — a suite of autonomous, AI-powered systems for growth." />
   <style>
     :root{
-      --bg:#0b0b10; --panel:#0f1117; --text:#eaeaf0; --muted:#cfd2da;
-      --line:rgba(255,255,255,.12); --card:rgba(255,255,255,.06);
-      --brand:#3b82f6; --brand2:#60a5fa;
+      --bg:#0a0f1a; --panel:#0f172a; --text:#eef2ff; --muted:#a3b5dc;
+      --blue:#3b82f6; --blue2:#60a5fa; --ring:rgba(59,130,246,.35);
     }
     *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,#0b0b10,#0f1117);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
-    a{color:#c8d7ff}
-    /* Header */
-    header{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line);background:#0b0b10}
-    .brand{font-weight:700;letter-spacing:.2px}
-    nav{margin-left:auto;display:flex;gap:16px}
-    nav a{color:var(--text);text-decoration:none;opacity:.85}
-    nav a:hover{opacity:1}
-    /* Layout */
-    .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-    .hero{padding:36px 0 18px;text-align:center}
-    .logo{max-width:640px;width:100%;border-radius:12px;display:block;margin:0 auto 14px;object-fit:cover;filter:drop-shadow(0 0 18px #00e0ff22)}
-    h1{font-size:40px;line-height:1.1;margin:0}
-    .lead{color:var(--muted);max-width:820px;margin:14px auto 0;font-size:18px;line-height:1.6}
-    /* Card */
-    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
-    /* Tabs */
-    .tabs{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0;justify-content:center}
-    .tab{
-      display:inline-flex;align-items:center;padding:12px 16px;border-radius:12px;
-      background:var(--card);border:1px solid var(--line);color:var(--text);
-      text-decoration:none;font-weight:600;transition:.2s
+    html,body{height:100%}
+    body{
+      margin:0; font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 80% -10%, rgba(96,165,250,.10), transparent 60%),
+        radial-gradient(900px 600px at -10% 0%, rgba(59,130,246,.12), transparent 60%),
+        var(--bg);
     }
-    .tab:hover{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.22);transform:translateY(-1px)}
-    footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;color:#b7bcc8;margin-top:28px}
+    .wrap{max-width:1100px; margin:0 auto; padding:28px 16px 80px}
+    a{color:inherit}
+    /* Hero */
+    .hero{
+      display:grid; grid-template-columns: 1fr; gap:16px; align-items:center;
+      margin-bottom:22px;
+    }
+    .hero-card{
+      background:rgba(255,255,255,.02);
+      border:1px solid rgba(96,165,250,.2);
+      border-radius:20px; padding:16px;
+      box-shadow:0 18px 50px rgba(0,0,0,.35);
+    }
+    .logo-img{width:100%; border-radius:14px; display:block}
+    h1{margin:6px 0 10px; font-size:34px; line-height:1.1}
+    p.lead{margin:0 0 14px; color:var(--muted); font-size:16px}
+    .btn{
+      display:inline-block; padding:12px 16px; border-radius:12px;
+      background:linear-gradient(180deg, rgba(59,130,246,.9), rgba(59,130,246,.75));
+      color:#fff; text-decoration:none; font-weight:700; box-shadow:0 12px 30px rgba(59,130,246,.35)
+    }
+    .btn:active{transform:translateY(1px)}
+
+    /* App Ecosystem (tabs) */
+    .eco{
+      margin-top:22px;
+      background: linear-gradient(180deg, rgba(59,130,246,.09), rgba(59,130,246,.03));
+      border:1px solid rgba(96,165,250,.25); border-radius:20px; padding:16px;
+    }
+    .eco h2{margin:0 0 10px}
+    .tabs{
+      display:flex; gap:8px; overflow:auto; padding:8px;
+      background:rgba(15,23,42,.7); border:1px solid rgba(96,165,250,.25); border-radius:14px;
+    }
+    .tab{
+      white-space:nowrap; cursor:pointer; padding:10px 14px; border-radius:12px; font-size:14px;
+      color:var(--text); background:rgba(59,130,246,.08); border:1px solid rgba(96,165,250,.35);
+    }
+    .tab:hover{border-color:rgba(59,130,246,.8)}
+    .tab[aria-selected="true"]{
+      background:linear-gradient(180deg, rgba(59,130,246,.26), rgba(59,130,246,.12));
+      box-shadow:0 0 0 3px var(--ring);
+    }
+    .panel{
+      display:none; margin-top:14px; border:1px solid rgba(96,165,250,.25);
+      background:linear-gradient(180deg, rgba(15,23,42,.9), rgba(15,23,42,.75));
+      border-radius:14px; padding:16px;
+    }
+    .panel.active{display:block}
+    .chips{display:flex; gap:8px; flex-wrap:wrap; margin:10px 0 14px}
+    .chip{
+      font-size:12px; padding:6px 10px; border-radius:999px; color:#dbe7ff;
+      border:1px dashed rgba(148,187,255,.45); background:rgba(59,130,246,.12)
+    }
+    .cta{
+      display:inline-flex; align-items:center; gap:8px; padding:12px 14px; border-radius:12px;
+      border:1px solid rgba(59,130,246,.9);
+      background:linear-gradient(180deg, rgba(59,130,246,.28), rgba(59,130,246,.12));
+      color:#fff; text-decoration:none; font-weight:700;
+    }
+    .small{font-size:13px; color:var(--muted)}
+    footer{margin-top:28px; text-align:center; color:var(--muted); font-size:12px}
+    @media(min-width:820px){
+      .hero{grid-template-columns: 420px 1fr}
+    }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="wrap">
-    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit">
-      <!-- Make sure this filename exists at repo root -->
-      <img src="elevacore-logo-final.jpeg" alt="Elevacore Logo" width="44" height="44" style="border-radius:8px;object-fit:cover">
-      <span class="brand">Elevacore Technologies</span>
-    </a>
-    <nav>
-      <a href="index.html" style="opacity:1">Home</a>
-      <a href="polaraforce.html">Polaraforce</a>
-      <a href="/Autoprofit%20ai/" 
-   style="display:inline-block;padding:12px 16px;border-radius:10px;background:#3b82f6;color:#fff;text-decoration:none;font-weight:700;margin-top:10px;">
-  Open AutoProfit AI
-</a>
-      
-      
-      <a href="signup.html">Join</a>
-    </nav>
-  </header>
-
-  <!-- Hero -->
-  <main class="wrap">
-    <!-- Optional big banner image (your logo as hero) -->
-    <img class="logo" src="elevacore-logo-final.jpeg" alt="Elevacore">
-<a href="/Autoprofit%20ai/" 
-   style="display:inline-block;padding:12px 16px;border-radius:10px;background:#3b82f6;color:#fff;text-decoration:none;font-weight:700;margin-top:10px;">
-  Open AutoProfit AI
-</a>
+  <div class="wrap">
+    <!-- HERO -->
     <section class="hero">
-      <h1>Elevacore Technologies</h1>
-      <p class="lead">
-        Elevacore Technologies is a next-generation innovation company building autonomous, AI-powered systems that
-        create, market, and scale digital businesses automatically. We replace complexity with clarity — empowering
-        creators, entrepreneurs, and brands to grow faster, smarter, and more freely than ever before. Our mission is
-        simple: to give people the tools, freedom, and confidence to <strong>create prosperity through intelligent technology.</strong>
-      </p>
-    </section>
-
-    <!-- Apps -->
-    <section class="card">
-      <h2 style="margin:0 0 8px">Our App Ecosystem</h2>
-      <div class="tabs">
-        <a class="tab" href="polaraforce.html">Polaraforce</a>
-        <a class="tab" href="signup.html">Join the Launch List</a>
-        <!-- Add more as you build them -->
-        <!-- <a class="tab" href="synthora.html">Synthora</a> -->
-        <!-- <a class="tab" href="foundation-formula.html">Foundation Formula</a> -->
+      <div class="hero-card">
+        <!-- If you uploaded elevacore-logo-final.jpeg, this will show it -->
+        <img class="logo-img" src="./elevacore-logo-final.jpeg" alt="Elevacore logo" />
+      </div>
+      <div>
+        <a class="btn" href="/Autoprofit%20ai/">Open AutoProfit AI</a>
+        <h1>Elevacore Technologies</h1>
+        <p class="lead">
+          Elevacore builds autonomous, AI-powered systems that create, market, and scale digital
+          businesses. We replace complexity with clarity so you can grow faster and freer.
+        </p>
       </div>
     </section>
-  </main>
 
-  <footer>
-    © <span id="y"></span> Elevacore Technologies — Engineering the Future of Automation
-  </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+    <!-- APP ECOSYSTEM -->
+    <section class="eco" id="apps">
+      <h2>Our App Ecosystem</h2>
+      <nav class="tabs" role="tablist" aria-label="Apps">
+        <button class="tab" aria-selected="true" data-tab="polaraforce">Polaraforce</button>
+        <button class="tab" data-tab="autoprofit-ai">AutoProfit AI</button>
+        <button class="tab" data-tab="autocontentx">AutoContentX</button>
+        <button class="tab" data-tab="autoinfluence">AutoInfluence</button>
+        <button class="tab" data-tab="infinitecommerce">InfiniteCommerce</button>
+        <button class="tab" data-tab="salustream">Salustream</button>
+        <button class="tab" data-tab="crossrealm">CrossRealm</button>
+        <button class="tab" data-tab="foracle">Foracle</button>
+        <button class="tab" data-tab="trend">Viral Trend Predictor</button>
+        <button class="tab" data-tab="fundflow">FundFlow</button>
+        <button class="tab" data-tab="amm">Affiliate Money Maximizer</button>
+        <button class="tab" data-tab="securesuccess">SecureSuccess</button>
+        <button class="tab" data-tab="aideal">AI DealMaker</button>
+        <button class="tab" data-tab="foundation">The Foundation Formula</button>
+      </nav>
+
+      <!-- PANELS -->
+      <div id="polaraforce" class="panel active" role="tabpanel">
+        <h3>Polaraforce</h3>
+        <p class="small">AI marketing engine: briefs → viral creative → multi-channel launch → analytics.</p>
+        <div class="chips">
+          <span class="chip">AI Video Ads</span><span class="chip">A/B Creative</span>
+          <span class="chip">Auto Targeting</span><span class="chip">CRM Lite</span>
+        </div>
+        <a class="cta" href="./polaraforce.html">Open Polaraforce</a>
+      </div>
+
+      <div id="autoprofit-ai" class="panel" role="tabpanel">
+        <h3>AutoProfit AI</h3>
+        <p class="small">Automated content + affiliate earnings across niches.</p>
+        <!-- URL-encoded space so it opens your existing folder “Autoprofit ai” -->
+        <a class="cta" href="/Autoprofit%20ai/">Open AutoProfit AI</a>
+      </div>
+
+      <div id="autocontentx" class="panel" role="tabpanel">
+        <h3>AutoContentX</h3>
+        <p class="small">Viral posts, blogs, scripts, auto-posting + monetization.</p>
+        <a class="cta" href="./autocontentx.html">Open AutoContentX</a>
+        <p class="small">Don’t have this file yet? Add <code>autocontentx.html</code> later.</p>
+      </div>
+
+      <div id="autoinfluence" class="panel" role="tabpanel">
+        <h3>AutoInfluence</h3>
+        <p class="small">Automated personal brand growth & sponsorships.</p>
+        <a class="cta" href="./autoinfluence.html">Open AutoInfluence</a>
+      </div>
+
+      <div id="infinitecommerce" class="panel" role="tabpanel">
+        <h3>InfiniteCommerce</h3>
+        <p class="small">Autonomous e-commerce creation, sync, and marketing.</p>
+        <a class="cta" href="./infinitecommerce.html">Open InfiniteCommerce</a>
+      </div>
+
+      <div id="salustream" class="panel" role="tabpanel">
+        <h3>Salustream</h3>
+        <p class="small">Social commerce + live events.</p>
+        <a class="cta" href="./salustream.html">Open Salustream</a>
+      </div>
+
+      <div id="crossrealm" class="panel" role="tabpanel">
+        <h3>CrossRealm</h3>
+        <p class="small">Squad play, stats bridging, Discord bot.</p>
+        <a class="cta" href="./crossrealm.html">Open CrossRealm</a>
+      </div>
+
+      <div id="foracle" class="panel" role="tabpanel">
+        <h3>Foracle</h3>
+        <p class="small">Predictions (entertainment): sports, racing, lottery.</p>
+        <a class="cta" href="./foracle.html">Open Foracle</a>
+      </div>
+
+      <div id="trend" class="panel" role="tabpanel">
+        <h3>Viral Trend Predictor</h3>
+        <p class="small">Find trends before they break.</p>
+        <a class="cta" href="./trend-predictor.html">Open Trend Predictor</a>
+      </div>
+
+      <div id="fundflow" class="panel" role="tabpanel">
+        <h3>FundFlow</h3>
+        <p class="small">Next-gen crowdfunding.</p>
+        <a class="cta" href="./fundflow.html">Open FundFlow</a>
+      </div>
+
+      <div id="amm" class="panel" role="tabpanel">
+        <h3>Affiliate Money Maximizer</h3>
+        <p class="small">Commission tracking & optimization.</p>
+        <a class="cta" href="./affiliate-money-maximizer.html">Open AMM</a>
+      </div>
+
+      <div id="securesuccess" class="panel" role="tabpanel">
+        <h3>SecureSuccess</h3>
+        <p class="small">Verified opportunities with step-by-step guides.</p>
+        <a class="cta" href="./securesuccess.html">Open SecureSuccess</a>
+      </div>
+
+      <div id="aideal" class="panel" role="tabpanel">
+        <h3>AI DealMaker</h3>
+        <p class="small">Automated negotiation & deal flow.</p>
+        <a class="cta" href="./ai-dealmaker.html">Open AI DealMaker</a>
+      </div>
+
+      <div id="foundation" class="panel" role="tabpanel">
+        <h3>The Foundation Formula</h3>
+        <p class="small">Transformation course: gratitude, action, accountability.</p>
+        <a class="cta" href="./foundation-formula.html">Open Course</a>
+      </div>
+    </section>
+
+    <footer>© <span id="year"></span> Elevacore Technologies</footer>
+  </div>
+
+  <script>
+    // Tabs logic (simple + robust)
+    const $ = (s,c=document)=>c.querySelector(s);
+    const $$ = (s,c=document)=>Array.from(c.querySelectorAll(s));
+    $('#year').textContent = new Date().getFullYear();
+
+    const tabs = $$('.tab');
+    const panels = $$('.panel');
+
+    function show(id){
+      panels.forEach(p => p.classList.toggle('active', p.id===id));
+      tabs.forEach(t => t.setAttribute('aria-selected', t.dataset.tab===id ? 'true' : 'false'));
+    }
+    tabs.forEach(btn => btn.addEventListener('click',()=> show(btn.dataset.tab)));
+
+    // Start with Polaraforce
+    show('polaraforce');
+  </script>
 </body>
 </html>
