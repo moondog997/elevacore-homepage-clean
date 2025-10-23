@@ -1,89 +1,92 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Elevacore Technologies</title>
+  <meta name="description" content="Elevacore Technologies builds autonomous, AI-powered systems that create, market, and scale digital businesses automatically." />
+  <link rel="icon" href="favicon.svg">
   <style>
-    body {
-      margin: 0;
-      padding: 40px 20px;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #0e0f1f, #1a1a2e);
-      color: #e0e0e0;
-      text-align: center;
+    :root{
+      --bg:#0b0b10; --panel:#0f1117; --text:#eaeaf0; --muted:#cfd2da;
+      --line:rgba(255,255,255,.12); --card:rgba(255,255,255,.06);
+      --brand:#3b82f6; --brand2:#60a5fa;
     }
-.tab {
-    display: inline-flex;
-    padding: 12px 16px;
-    border-radius: 12px;
-    backgrounnd: rgba(255,255,255,.06);
-    border: 1px solid rgba(255,255,255
-    color: #eaeaf0;
-    text-deciratuib: none;
-    font-weight: 600;
-  }
-  </style>
-    img {
-      max-width: 180px;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 0 10px #00ffff);
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#0b0b10,#0f1117);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial}
+    a{color:#c8d7ff}
+    /* Header */
+    header{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid var(--line);background:#0b0b10}
+    .brand{font-weight:700;letter-spacing:.2px}
+    nav{margin-left:auto;display:flex;gap:16px}
+    nav a{color:var(--text);text-decoration:none;opacity:.85}
+    nav a:hover{opacity:1}
+    /* Layout */
+    .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+    .hero{padding:36px 0 18px;text-align:center}
+    .logo{max-width:640px;width:100%;border-radius:12px;display:block;margin:0 auto 14px;object-fit:cover;filter:drop-shadow(0 0 18px #00e0ff22)}
+    h1{font-size:40px;line-height:1.1;margin:0}
+    .lead{color:var(--muted);max-width:820px;margin:14px auto 0;font-size:18px;line-height:1.6}
+    /* Card */
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+    /* Tabs */
+    .tabs{display:flex;flex-wrap:wrap;gap:12px;margin:14px 0;justify-content:center}
+    .tab{
+      display:inline-flex;align-items:center;padding:12px 16px;border-radius:12px;
+      background:var(--card);border:1px solid var(--line);color:var(--text);
+      text-decoration:none;font-weight:600;transition:.2s
     }
-
-    .intro {
-      font-size: 18px;
-      max-width: 700px;
-      margin: 0 auto 40px;
-      line-height: 1.6;
-    }
-
-    .app-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-    }
-
-    .app-tab {
-      background-color: #007bff;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 6px;
-      font-size: 14px;
-      font-weight: bold;
-      box-shadow: 0 0 6px #00ffff;
-    }
+    .tab:hover{background:rgba(255,255,255,.10);border-color:rgba(255,255,255,.22);transform:translateY(-1px)}
+    footer{border-top:1px solid var(--line);padding:24px 20px;text-align:center;color:#b7bcc8;margin-top:28px}
   </style>
 </head>
 <body>
-  <img src="elevacore-logo-final.jpeg" alt="Elevacore Logo" />
-  <h1>Elevacore Technologies</h1>
+  <!-- Header -->
+  <header class="wrap">
+    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit">
+      <!-- Make sure this filename exists at repo root -->
+      <img src="elevacore-logo-final.jpeg" alt="Elevacore Logo" width="44" height="44" style="border-radius:8px;object-fit:cover">
+      <span class="brand">Elevacore Technologies</span>
+    </a>
+    <nav>
+      <a href="index.html" style="opacity:1">Home</a>
+      <a href="polaraforce.html">Polaraforce</a>
+      <a href="signup.html">Join</a>
+    </nav>
+  </header>
 
-  <div class="intro">
-    Elevacore Technologies is a next-generation innovation company building autonomous, AI-powered systems that create, market, and scale digital businesses automatically.<br><br>
-    We develop intelligent platforms that replace complexity with clarity — empowering creators, entrepreneurs, and brands to grow faster, smarter, and more freely than ever before.<br><br>
-    More than a tech company, Elevacore is a movement — redefining success through automation, creativity, and purpose. Our mission is simple: to give people the tools, freedom, and confidence to create prosperity through intelligent technology.
-  </div>
+  <!-- Hero -->
+  <main class="wrap">
+    <!-- Optional big banner image (your logo as hero) -->
+    <img class="logo" src="elevacore-logo-final.jpeg" alt="Elevacore">
 
-  <h2>Our App Ecosystem</h2>
-  <div class="app-grid">
-    <a href="polaraforce.html" class="tab">polaraforce</a>
-    <div class="app-tab">Synthora</div>
-    <div class="app-tab">Foundation Formula</div>
-    <div class="app-tab">Crossrealm</div>
-    <div class="app-tab">Foracle</div>
-    <div class="app-tab">Trendrop</div>
-    <div class="app-tab">Danamm</div>
-    <div class="app-tab">Promptpitch</div>
-    <div class="app-tab">Pulse</div>
-    <div class="app-tab">Bizorch</div>
-    <div class="app-tab">Moneymax</div>
-    <div class="app-tab">Moneygod</div>
-    <div class="app-tab">Autoprofit AI</div>
-    <div class="app-tab">Infanantcommerse</div>
-    <div class="app-tab">Autoinfluince</div>
-    <div class="app-tab">Eventplan</div>
-    <div class="app-tab">Dealmkr</div>
-  </div>
+    <section class="hero">
+      <h1>Elevacore Technologies</h1>
+      <p class="lead">
+        Elevacore Technologies is a next-generation innovation company building autonomous, AI-powered systems that
+        create, market, and scale digital businesses automatically. We replace complexity with clarity — empowering
+        creators, entrepreneurs, and brands to grow faster, smarter, and more freely than ever before. Our mission is
+        simple: to give people the tools, freedom, and confidence to <strong>create prosperity through intelligent technology.</strong>
+      </p>
+    </section>
+
+    <!-- Apps -->
+    <section class="card">
+      <h2 style="margin:0 0 8px">Our App Ecosystem</h2>
+      <div class="tabs">
+        <a class="tab" href="polaraforce.html">Polaraforce</a>
+        <a class="tab" href="signup.html">Join the Launch List</a>
+        <!-- Add more as you build them -->
+        <!-- <a class="tab" href="synthora.html">Synthora</a> -->
+        <!-- <a class="tab" href="foundation-formula.html">Foundation Formula</a> -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="y"></span> Elevacore Technologies — Engineering the Future of Automation
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
