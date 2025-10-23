@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Elevacore Technologies</title>
-  <meta name="description" content="Elevacore — a suite of autonomous, AI-powered systems for growth." />
+  <title>Elevacore Technologies — Autonomous Growth Apps</title>
+  <meta name="description" content="Elevacore Technologies builds autonomous, AI-powered apps that make earning online simple, fast, and real." />
   <style>
     :root{
       --bg:#0a0f1a; --panel:#0f172a; --text:#eef2ff; --muted:#a3b5dc;
       --blue:#3b82f6; --blue2:#60a5fa; --ring:rgba(59,130,246,.35);
+      --card:#0c1426;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -22,11 +23,9 @@
     }
     .wrap{max-width:1100px; margin:0 auto; padding:28px 16px 80px}
     a{color:inherit}
-    /* Hero */
-    .hero{
-      display:grid; grid-template-columns: 1fr; gap:16px; align-items:center;
-      margin-bottom:22px;
-    }
+
+    /* HERO / INTRO */
+    .hero{display:grid; grid-template-columns:1fr; gap:16px; align-items:center; margin-bottom:26px}
     .hero-card{
       background:rgba(255,255,255,.02);
       border:1px solid rgba(96,165,250,.2);
@@ -34,7 +33,7 @@
       box-shadow:0 18px 50px rgba(0,0,0,.35);
     }
     .logo-img{width:100%; border-radius:14px; display:block}
-    h1{margin:6px 0 10px; font-size:34px; line-height:1.1}
+    h1{margin:6px 0 10px; font-size:36px; line-height:1.1}
     p.lead{margin:0 0 14px; color:var(--muted); font-size:16px}
     .btn{
       display:inline-block; padding:12px 16px; border-radius:12px;
@@ -43,71 +42,54 @@
     }
     .btn:active{transform:translateY(1px)}
 
-    /* App Ecosystem (tabs) */
-    .eco{
-      margin-top:22px;
-      background: linear-gradient(180deg, rgba(59,130,246,.09), rgba(59,130,246,.03));
-      border:1px solid rgba(96,165,250,.25); border-radius:20px; padding:16px;
-    }
+    /* ECOSYSTEM */
+    .eco{margin-top:26px;background:linear-gradient(180deg,rgba(59,130,246,.09),rgba(59,130,246,.03));border:1px solid rgba(96,165,250,.25);border-radius:20px;padding:16px}
     .eco h2{margin:0 0 10px}
-    .tabs{
-      display:flex; gap:8px; overflow:auto; padding:8px;
-      background:rgba(15,23,42,.7); border:1px solid rgba(96,165,250,.25); border-radius:14px;
-    }
-    .tab{
-      white-space:nowrap; cursor:pointer; padding:10px 14px; border-radius:12px; font-size:14px;
-      color:var(--text); background:rgba(59,130,246,.08); border:1px solid rgba(96,165,250,.35);
-    }
+    .tabs{display:flex;gap:8px;overflow:auto;padding:8px;background:rgba(15,23,42,.7);border:1px solid rgba(96,165,250,.25);border-radius:14px}
+    .tab{white-space:nowrap;cursor:pointer;padding:10px 14px;border-radius:12px;font-size:14px;color:var(--text);background:rgba(59,130,246,.08);border:1px solid rgba(96,165,250,.35)}
     .tab:hover{border-color:rgba(59,130,246,.8)}
-    .tab[aria-selected="true"]{
-      background:linear-gradient(180deg, rgba(59,130,246,.26), rgba(59,130,246,.12));
-      box-shadow:0 0 0 3px var(--ring);
-    }
-    .panel{
-      display:none; margin-top:14px; border:1px solid rgba(96,165,250,.25);
-      background:linear-gradient(180deg, rgba(15,23,42,.9), rgba(15,23,42,.75));
-      border-radius:14px; padding:16px;
-    }
+    .tab[aria-selected="true"]{background:linear-gradient(180deg,rgba(59,130,246,.26),rgba(59,130,246,.12));box-shadow:0 0 0 3px var(--ring)}
+    .panel{display:none;margin-top:14px;border:1px solid rgba(96,165,250,.25);background:linear-gradient(180deg,rgba(15,23,42,.9),rgba(15,23,42,.75));border-radius:14px;padding:16px}
     .panel.active{display:block}
-    .chips{display:flex; gap:8px; flex-wrap:wrap; margin:10px 0 14px}
-    .chip{
-      font-size:12px; padding:6px 10px; border-radius:999px; color:#dbe7ff;
-      border:1px dashed rgba(148,187,255,.45); background:rgba(59,130,246,.12)
-    }
-    .cta{
-      display:inline-flex; align-items:center; gap:8px; padding:12px 14px; border-radius:12px;
-      border:1px solid rgba(59,130,246,.9);
-      background:linear-gradient(180deg, rgba(59,130,246,.28), rgba(59,130,246,.12));
-      color:#fff; text-decoration:none; font-weight:700;
-    }
-    .small{font-size:13px; color:var(--muted)}
-    footer{margin-top:28px; text-align:center; color:var(--muted); font-size:12px}
-    @media(min-width:820px){
-      .hero{grid-template-columns: 420px 1fr}
-    }
+    .panel h3{margin:0 0 6px}
+    .small{font-size:13px;color:var(--muted)}
+    .cta{display:inline-flex;align-items:center;gap:8px;padding:12px 14px;border-radius:12px;border:1px solid rgba(59,130,246,.9);background:linear-gradient(180deg,rgba(59,130,246,.28),rgba(59,130,246,.12));color:#fff;text-decoration:none;font-weight:700;margin-top:10px}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 12px}
+    .chip{font-size:12px;padding:6px 10px;border-radius:999px;color:#dbe7ff;border:1px dashed rgba(148,187,255,.45);background:rgba(59,130,246,.12)}
+    .how{margin-top:10px;border-top:1px solid rgba(96,165,250,.18);padding-top:10px}
+    .how h4{margin:0 0 8px}
+    .how ol{margin:0;padding-left:18px}
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:12px}
+    @media(min-width:820px){.hero{grid-template-columns:420px 1fr}}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <!-- HERO -->
+    <!-- INTRO -->
     <section class="hero">
       <div class="hero-card">
         <!-- If you uploaded elevacore-logo-final.jpeg, this will show it -->
         <img class="logo-img" src="./elevacore-logo-final.jpeg" alt="Elevacore logo" />
       </div>
       <div>
-        <a class="btn" href="/Autoprofit%20ai/">Open AutoProfit AI</a>
         <h1>Elevacore Technologies</h1>
         <p class="lead">
-          Elevacore builds autonomous, AI-powered systems that create, market, and scale digital
-          businesses. We replace complexity with clarity so you can grow faster and freer.
+          Elevacore Technologies is a high-tech software company building ground-breaking apps that are
+          simple to use and built to earn. Our platforms generate real, passive online income for users by
+          automating the hard parts—content, marketing, traffic, and monetization. Our mission is bold and
+          practical: free people from financial struggle and open a path to abundance by removing the
+          complexity from making money online.
         </p>
+        <!-- Quick access (optional) -->
+        <a class="btn" href="/Autoprofit%20ai/">Open AutoProfit AI</a>
       </div>
     </section>
 
     <!-- APP ECOSYSTEM -->
     <section class="eco" id="apps">
       <h2>Our App Ecosystem</h2>
+      <div class="small">Explore each product. Click a tab to see what it does and how it works.</div>
+
       <nav class="tabs" role="tablist" aria-label="Apps">
         <button class="tab" aria-selected="true" data-tab="polaraforce">Polaraforce</button>
         <button class="tab" data-tab="autoprofit-ai">AutoProfit AI</button>
@@ -126,94 +108,208 @@
       </nav>
 
       <!-- PANELS -->
+      <!-- Polaraforce -->
       <div id="polaraforce" class="panel active" role="tabpanel">
         <h3>Polaraforce</h3>
-        <p class="small">AI marketing engine: briefs → viral creative → multi-channel launch → analytics.</p>
+        <div class="small">
+          The most advanced marketing engine we’ve ever built—delivering creative, targeting, and analytics
+          that rival premium ad agencies for a fraction of the cost. Polaraforce turns a short brief into
+          scroll-stopping ads, precise audiences, and a full multi-channel launch—faster, smarter, cheaper.
+        </div>
         <div class="chips">
-          <span class="chip">AI Video Ads</span><span class="chip">A/B Creative</span>
-          <span class="chip">Auto Targeting</span><span class="chip">CRM Lite</span>
+          <span class="chip">AI Video & Image Ads</span><span class="chip">Smart Targeting</span>
+          <span class="chip">A/B Creative</span><span class="chip">CRM Lite</span><span class="chip">Multi-Channel</span>
         </div>
         <a class="cta" href="./polaraforce.html">Open Polaraforce</a>
+        <div class="how">
+          <h4>How it works</h4>
+          <ol>
+            <li><strong>Tell us your goal.</strong> Drop a brief or product link—Polaraforce maps your offer and audience.</li>
+            <li><strong>AI creates your campaign.</strong> Video scripts, visuals, captions, and variants are generated automatically.</li>
+            <li><strong>Launch everywhere.</strong> Deploy to major platforms with tracking, then watch real-time results and scale.</li>
+          </ol>
+        </div>
       </div>
 
+      <!-- AutoProfit AI -->
       <div id="autoprofit-ai" class="panel" role="tabpanel">
         <h3>AutoProfit AI</h3>
-        <p class="small">Automated content + affiliate earnings across niches.</p>
-        <!-- URL-encoded space so it opens your existing folder “Autoprofit ai” -->
+        <div class="small">
+          Type your niches and let the system do the rest. AutoProfit AI spins up always-on content streams,
+          embeds affiliate links, posts across platforms, and routes earnings to your bank—creating
+          24/7 income across as many niches as you choose.
+        </div>
+        <div class="chips">
+          <span class="chip">Hands-Free Posting</span><span class="chip">Affiliate Link Injection</span>
+          <span class="chip">Trend-Synced Content</span><span class="chip">Multi-Niche, Parallel</span>
+        </div>
         <a class="cta" href="/Autoprofit%20ai/">Open AutoProfit AI</a>
+        <div class="how">
+          <h4>How it works</h4>
+          <ol>
+            <li><strong>Pick niches.</strong> Add one or add hundreds—no limit.</li>
+            <li><strong>AI creates & posts.</strong> Articles, reels, reviews, and lists publish with your affiliate links.</li>
+            <li><strong>Earn on autopilot.</strong> Clicks and purchases generate commissions deposited to you.</li>
+          </ol>
+        </div>
       </div>
 
+      <!-- AutoContentX -->
       <div id="autocontentx" class="panel" role="tabpanel">
         <h3>AutoContentX</h3>
-        <p class="small">Viral posts, blogs, scripts, auto-posting + monetization.</p>
+        <div class="small">
+          Viral content engine for blogs, socials, and video scripts. SEO-tuned, trend-aware, and ready to monetize.
+        </div>
+        <div class="chips"><span class="chip">SEO</span><span class="chip">Auto-Posting</span><span class="chip">Monetization</span></div>
         <a class="cta" href="./autocontentx.html">Open AutoContentX</a>
-        <p class="small">Don’t have this file yet? Add <code>autocontentx.html</code> later.</p>
+        <div class="how"><h4>How it works</h4><ol>
+          <li><strong>Connect channels.</strong> Blog + social accounts.</li>
+          <li><strong>Generate calendar.</strong> Daily posts matched to trends.</li>
+          <li><strong>Publish & earn.</strong> Traffic → ads, affiliates, sponsors.</li>
+        </ol></div>
       </div>
 
+      <!-- AutoInfluence -->
       <div id="autoinfluence" class="panel" role="tabpanel">
         <h3>AutoInfluence</h3>
-        <p class="small">Automated personal brand growth & sponsorships.</p>
+        <div class="small">Grow a personal brand on autopilot—content, engagement, and sponsorships handled for you.</div>
+        <div class="chips"><span class="chip">Creator Growth</span><span class="chip">DM Assist</span><span class="chip">Sponsorships</span></div>
         <a class="cta" href="./autoinfluence.html">Open AutoInfluence</a>
+        <div class="how"><h4>How it works</h4><ol>
+          <li><strong>Pick your style.</strong> Niche + voice.</li>
+          <li><strong>Post & interact.</strong> AI handles replies and boosts.</li>
+          <li><strong>Monetize.</strong> Deals and affiliate offers auto-inserted.</li>
+        </ol></div>
       </div>
 
+      <!-- InfiniteCommerce -->
       <div id="infinitecommerce" class="panel" role="tabpanel">
         <h3>InfiniteCommerce</h3>
-        <p class="small">Autonomous e-commerce creation, sync, and marketing.</p>
+        <div class="small">AI-built storefronts that source products, design branding, and market themselves worldwide.</div>
+        <div class="chips"><span class="chip">1-Click Store</span><span class="chip">Product Sourcing</span><span class="chip">Auto-Ads</span></div>
         <a class="cta" href="./infinitecommerce.html">Open InfiniteCommerce</a>
+        <div class="how"><h4>How it works</h4><ol>
+          <li><strong>Choose a market.</strong> The system builds your store.</li>
+          <li><strong>AI fills inventory.</strong> Trending products + content.</li>
+          <li><strong>Sales engine on.</strong> Traffic and conversions optimized.</li>
+        </ol></div>
       </div>
 
+      <!-- Salustream -->
       <div id="salustream" class="panel" role="tabpanel">
         <h3>Salustream</h3>
-        <p class="small">Social commerce + live events.</p>
+        <div class="small">TikTok-style social commerce with live shopping, creator tools, and built-in storefronts.</div>
+        <div class="chips"><span class="chip">Short-Form + Live</span><span class="chip">Creator Stores</span><span class="chip">Shoppable Video</span></div>
         <a class="cta" href="./salustream.html">Open Salustream</a>
+        <div class="how"><h4>How it works</h4><ol>
+          <li><strong>Create.</strong> Post videos or go live.</li>
+          <li><strong>Tag products.</strong> Auto-links and payouts.</li>
+          <li><strong>Scale.</strong> Algorithm drives discovery and sales.</li>
+        </ol></div>
       </div>
 
+      <!-- CrossRealm -->
       <div id="crossrealm" class="panel" role="tabpanel">
         <h3>CrossRealm</h3>
-        <p class="small">Squad play, stats bridging, Discord bot.</p>
+        <div class="small">Squad hub for gamers—stats bridging, events, and Discord bot coordination.</div>
+        <div class="chips"><span class="chip">Squads</span><span class="chip">Stats</span><span class="chip">Discord Bot</span></div>
         <a class="cta" href="./crossrealm.html">Open CrossRealm</a>
+        <div class="how"><h4>How it works</h4><ol>
+          <li><strong>Create a squad.</strong> Invite across platforms.</li>
+          <li><strong>Sync stats.</strong> Unified view of play.</li>
+          <li><strong>Compete & grow.</strong> Events, rewards, and ranks.</li>
+        </ol></div>
       </div>
 
+      <!-- Foracle -->
       <div id="foracle" class="panel" role="tabpanel">
         <h3>Foracle</h3>
-        <p class="small">Predictions (entertainment): sports, racing, lottery.</p>
+        <div class="small">Prediction studio for sports, racing, and lottery (entertainment only).</div>
+        <div class="chips"><span class="chip">Model Ensembles</span><span class="chip">Signals</span><span class="chip">Dashboards</span></div>
         <a class="cta" href="./foracle.html">Open Foracle</a>
+        <div class="how"><h4>How it works</h4><ol>
+          <li><strong>Pick a market.</strong> Games, races, or numbers.</li>
+          <li><strong>Run analysis.</strong> Historic trends + live data.</li>
+          <li><strong>View probabilities.</strong> Make informed, responsible choices.</li>
+        </ol></div>
       </div>
 
+      <!-- Viral Trend Predictor -->
       <div id="trend" class="panel" role="tabpanel">
         <h3>Viral Trend Predictor</h3>
-        <p class="small">Find trends before they break.</p>
+        <div class="small">Spot trends early and publish first. Get the unfair advantage for content and products.</div>
+        <div class="chips"><span class="chip">Early Signals</span><span class="chip">Content Prompts</span><span class="chip">Alerts</span></div>
         <a class="cta" href="./trend-predictor.html">Open Trend Predictor</a>
+        <div class="how"><h4>How it works</h4><ol>
+          <li><strong>Scan sources.</strong> Social, search, sales velocity.</li>
+          <li><strong>Predict breakouts.</strong> See what’s about to pop.</li>
+          <li><strong>Publish first.</strong> Capitalize with content & offers.</li>
+        </ol></div>
       </div>
 
+      <!-- FundFlow -->
       <div id="fundflow" class="panel" role="tabpanel">
         <h3>FundFlow</h3>
-        <p class="small">Next-gen crowdfunding.</p>
+        <div class="small">Modern crowdfunding built for creators and founders—transparent, fast, and social.</div>
+        <div class="chips"><span class="chip">Campaign Builder</span><span class="chip">Perks</span><span class="chip">Community</span></div>
         <a class="cta" href="./fundflow.html">Open FundFlow</a>
+        <div class="how"><h4>How it works</h4><ol>
+          <li><strong>Launch campaign.</strong> Story + goals.</li>
+          <li><strong>Mobilize audience.</strong> Built-in social tools.</li>
+          <li><strong>Deliver & grow.</strong> Perks, updates, stretch goals.</li>
+        </ol></div>
       </div>
 
+      <!-- AMM -->
       <div id="amm" class="panel" role="tabpanel">
         <h3>Affiliate Money Maximizer</h3>
-        <p class="small">Commission tracking & optimization.</p>
+        <div class="small">See every click, commission, and payout in one place—then optimize it automatically.</div>
+        <div class="chips"><span class="chip">Network Connections</span><span class="chip">Smart Links</span><span class="chip">Payout Tracker</span></div>
         <a class="cta" href="./affiliate-money-maximizer.html">Open AMM</a>
+        <div class="how"><h4>How it works</h4><ol>
+          <li><strong>Connect networks.</strong> Amazon, ClickBank & more.</li>
+          <li><strong>Deploy links.</strong> Auto-tag + shorten.</li>
+          <li><strong>Optimize.</strong> Route clicks to highest-paying offers.</li>
+        </ol></div>
       </div>
 
+      <!-- SecureSuccess -->
       <div id="securesuccess" class="panel" role="tabpanel">
         <h3>SecureSuccess</h3>
-        <p class="small">Verified opportunities with step-by-step guides.</p>
+        <div class="small">Only legitimate, step-by-step online income paths—verified by AI and human review.</div>
+        <div class="chips"><span class="chip">Verified Only</span><span class="chip">Beginner Friendly</span><span class="chip">Refund Promise</span></div>
         <a class="cta" href="./securesuccess.html">Open SecureSuccess</a>
+        <div class="how"><h4>How it works</h4><ol>
+          <li><strong>Browse verified paths.</strong> No hype, just what works.</li>
+          <li><strong>Follow steps.</strong> Plain-English, checklist guides.</li>
+          <li><strong>Profit & prove.</strong> Track milestones and earnings.</li>
+        </ol></div>
       </div>
 
+      <!-- AI DealMaker -->
       <div id="aideal" class="panel" role="tabpanel">
         <h3>AI DealMaker</h3>
-        <p class="small">Automated negotiation & deal flow.</p>
+        <div class="small">Your automated sales assistant—prospecting, outreach, pricing, and contracts done for you.</div>
+        <div class="chips"><span class="chip">Pipeline AI</span><span class="chip">Negotiation</span><span class="chip">Smart Contracts</span></div>
         <a class="cta" href="./ai-dealmaker.html">Open AI DealMaker</a>
+        <div class="how"><h4>How it works</h4><ol>
+          <li><strong>Import leads.</strong> Or let AI find them.</li>
+          <li><strong>Pitch & negotiate.</strong> Personalized messages + counters.</li>
+          <li><strong>Close.</strong> Auto-draft contracts and collect payment.</li>
+        </ol></div>
       </div>
 
+      <!-- Foundation Formula -->
       <div id="foundation" class="panel" role="tabpanel">
         <h3>The Foundation Formula</h3>
-        <p class="small">Transformation course: gratitude, action, accountability.</p>
+        <div class="small">A transformation course that turns motivation into permanent change through daily action.</div>
+        <div class="chips"><span class="chip">Gratitude</span><span class="chip">Habits</span><span class="chip">Accountability</span></div>
         <a class="cta" href="./foundation-formula.html">Open Course</a>
+        <div class="how"><h4>How it works</h4><ol>
+          <li><strong>Define your future.</strong> Vision, goals, and why.</li>
+          <li><strong>Lock routines.</strong> Simple daily rituals that compound.</li>
+          <li><strong>Upload proof.</strong> Track progress; earn rewards.</li>
+        </ol></div>
       </div>
     </section>
 
@@ -221,21 +317,18 @@
   </div>
 
   <script>
-    // Tabs logic (simple + robust)
     const $ = (s,c=document)=>c.querySelector(s);
     const $$ = (s,c=document)=>Array.from(c.querySelectorAll(s));
     $('#year').textContent = new Date().getFullYear();
 
     const tabs = $$('.tab');
     const panels = $$('.panel');
-
     function show(id){
       panels.forEach(p => p.classList.toggle('active', p.id===id));
       tabs.forEach(t => t.setAttribute('aria-selected', t.dataset.tab===id ? 'true' : 'false'));
     }
     tabs.forEach(btn => btn.addEventListener('click',()=> show(btn.dataset.tab)));
-
-    // Start with Polaraforce
+    // start on Polaraforce
     show('polaraforce');
   </script>
 </body>
